@@ -41,7 +41,7 @@ export class SketchbookTree extends FileTree {
         if (DirNode.is(node)) {
             const sketch = await this.sketchesService.maybeLoadSketch(node.uri.toString());
             if (sketch) {
-                Object.assign(node, { type: 'sketch', commands: [SketchbookCommands.OPEN, SketchbookCommands.OPEN_NEW_WINDOW] });
+                Object.assign(node, { type: 'sketch', commands: [SketchbookCommands.OPEN_SKETCHBOOK_CONTEXT_MENU] });
                 if (!showAllFiles) {
                     delete (node as any).expanded;
                 }
